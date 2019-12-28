@@ -175,6 +175,10 @@ class Network(object):
         """Return the vector of partial derivatives \partial C_x /
         \partial a for the output activations."""
         return (output_activations-y)
+    
+    def classify(self, sample):
+        """Return classification lable of given sample."""
+        return np.argmax(self.feedforward(sample))
 
 #### Miscellaneous functions
 def sigmoid(z):
